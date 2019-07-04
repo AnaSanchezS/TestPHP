@@ -21,7 +21,7 @@ class Password
     }
 
 
-    public function password()
+    public function Password()
     {
         $sql = "SELECT pass FROM login";
         $stmt = $this->pdo->query($sql);
