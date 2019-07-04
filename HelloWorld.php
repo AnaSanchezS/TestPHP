@@ -30,7 +30,7 @@ class HelloWorld
 	//Password
 	
 	
-    public function hello($password = 'Contrasena')
+    public function passwordtest($password = 'Contrasena')
     {
         $sql = "INSERT INTO password VALUES (" . $this->pdo->quote($password) . ")";
         $this->pdo->query($sql);
