@@ -18,6 +18,8 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
 	public function tearDown()
     {
         $this->pdo->query("DROP TABLE login");
+	$this->pdo->query("DROP TABLE password");
+        
     }
 	
      
@@ -28,11 +30,7 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('Hello Luis', $helloWorld->hello());
     }
 
-    public function tearDown1()
-    {
-        $this->pdo->query("DROP TABLE password");
-    }
-	
+    
 	public function testpassword()
     {
         $password = new password($this->pdo);
