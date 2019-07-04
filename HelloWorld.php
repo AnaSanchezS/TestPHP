@@ -23,7 +23,7 @@ class HelloWorld
 
     public function what()
     {
-        $sql = "SELECT what FROM login";
+        $sql = "SELECT user FROM login";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchColumn();
     }
