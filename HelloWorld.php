@@ -23,9 +23,30 @@ class HelloWorld
 
     public function what()
     {
-        $sql = "SELECT user FROM login";
+        $sql = "SELECT what FROM login";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchColumn();
     }
+	//Password
 	
+	 public function __construct(PDO $pdo1)
+    {
+        $this->pdo = $pdo1;
+    }
+
+    public function hello($password = 'Contrasena')
+    {
+        $sql = "INSERT INTO password VALUES (" . $this->pdo->quote($password) . ")";
+        $this->pdo->query($sql);
+        return "Hello $password";
+		 print "Hello $password";
+    }
+
+
+    public function password()
+    {
+        $sql = "SELECT pass FROM login";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchColumn();
+    }
 	}
