@@ -12,9 +12,9 @@ class HelloWorld
         $this->pdo = $pdo;
     }
 
-    public function hello($what = 'World')
+    public function hello($what = 'user')
     {
-        $sql = "INSERT INTO hello VALUES (" . $this->pdo->quote($what) . ")";
+        $sql = "INSERT INTO login VALUES (" . $this->pdo->quote($what) . ")";
         $this->pdo->query($sql);
         return "Hello $what";
     }
@@ -22,7 +22,7 @@ class HelloWorld
 
     public function what()
     {
-        $sql = "SELECT what FROM hello";
+        $sql = "SELECT what FROM login";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchColumn();
     }
