@@ -20,14 +20,7 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
     }
 	
 	
-	function getuser($conn) {
-    $sql = 'SELECT * FROM login ORDER BY name';
-    foreach ($conn->query($sql) as $row) {
-        print $row['user'] . "\t";
-        //print $row['name'] . "\t";
-      }
-}
-     
+	   
     public function testHelloWorld()
     {
         $helloWorld = new HelloWorld($this->pdo);
