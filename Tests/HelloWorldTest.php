@@ -35,7 +35,7 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
     {
         $password = new Password($this->pdo);
 
-        $this->assertEquals('Contrasena', $password>password());
+        $this->assertEquals('Contrasena', $password>Password());
     }
 
     
