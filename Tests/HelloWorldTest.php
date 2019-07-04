@@ -27,11 +27,7 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
         //print $row['name'] . "\t";
       }
 }
-      public function tearDown()
-    {
-        $this->pdo->query("DROP TABLE hello");
-    }
-
+     
     public function testHelloWorld()
     {
         $helloWorld = new HelloWorld($this->pdo);
