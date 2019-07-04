@@ -29,11 +29,7 @@ class HelloWorld
     }
 	//Password
 	
-	 public function __construct(PDO $pdo1)
-    {
-        $this->pdo = $pdo1;
-    }
-
+	
     public function hello($password = 'Contrasena')
     {
         $sql = "INSERT INTO password VALUES (" . $this->pdo->quote($password) . ")";
