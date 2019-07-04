@@ -1,29 +1,29 @@
 <?php
 
-class HelloWorldTest extends PHPUnit_Framework_TestCase
+class HelloWorld
 {
     /**
      * @var PDO
      */
     private $pdo;
 
-    public function setUp()
+    public function __construct(PDO $pdo)
     {
-        $this->pdo = new PDO($GLOBALS['db_dsn'], $GLOBALS['db_username'], $GLOBALS['db_password']);
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->pdo->query("CREATE TABLE login (user VARCHAR(50) NOT NULL)");
+        $this->pdo = $pdo;
     }
 
-	public function tearDown()
+    public function hello($what = 'user')
     {
-        $this->pdo->query("DROP TABLE hello");
+        $sql = "INSERT INTO login VALUES (" . $this->pdo->quote($what) . ")";
+        $this->pdo->query($sql);
+        return "$what";
     }
-	
 
-    public function testHelloWorld()
+
+    public function what()
     {
-        $helloWorld = new HelloWorld($this->pdo);
-
-        $this->assertEquals('Hello World', $helloWorld->hello());
+        $sql = "SELECT what FROM login";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchColumn();
     }
 }
