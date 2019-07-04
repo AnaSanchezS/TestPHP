@@ -28,3 +28,6 @@ class Password
         return $stmt->fetchColumn();
     }
 	}
+
+
+//
