@@ -12,7 +12,7 @@ class HelloWorld
         $this->pdo = $pdo;
     }
 
-    public function hello($what = 'Luis')
+    public function hello($what = 'User is')
     {
         $sql = "INSERT INTO login VALUES (" . $this->pdo->quote($what) . ")";
         $this->pdo->query($sql);
@@ -27,11 +27,6 @@ class HelloWorld
         return $stmt->fetchColumn();
     }
 	
-	function getuser($conn) {
-    $sql = 'SELECT * FROM login ORDER BY name';
-    foreach ($conn->query($sql) as $row) {
-        print $row['user'] . "\t";
-        //print $row['name'] . "\t";
-      }
+
 }
 }
