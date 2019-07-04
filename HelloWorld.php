@@ -17,6 +17,7 @@ class HelloWorld
         $sql = "INSERT INTO login VALUES (" . $this->pdo->quote($what) . ")";
         $this->pdo->query($sql);
         return "Hello $what";
+		 print "Hello $what";
     }
 
 
@@ -26,4 +27,5 @@ class HelloWorld
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchColumn();
     }
-}
+	
+	}
