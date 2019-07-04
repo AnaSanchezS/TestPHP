@@ -12,7 +12,7 @@ class HelloWorld
         $this->pdo = $pdo;
     }
 
-    public function hello($what = 'user')
+    public function hello($what = 'Luis')
     {
         $sql = "INSERT INTO login VALUES (" . $this->pdo->quote($what) . ")";
         $this->pdo->query($sql);
