@@ -12,14 +12,11 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
         $this->pdo = new PDO($GLOBALS['db_dsn'], $GLOBALS['db_username'], $GLOBALS['db_password']);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->query("CREATE TABLE login (user VARCHAR(50) NOT NULL)");
-		$this->pdo->query("CREATE TABLE password (pass VARCHAR(50) NOT NULL)");
     }
 
 	public function tearDown()
     {
         $this->pdo->query("DROP TABLE login");
-	$this->pdo->query("DROP TABLE password");
-        
     }
 	
      
@@ -31,12 +28,6 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
     }
 
     
-	public function testpassword()
-    {
-        $password = new Password($this->pdo);
-
-        $this->assertEquals('Contrasena', $password>Password());
-    }
 
     
 }
